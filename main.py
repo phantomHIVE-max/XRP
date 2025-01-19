@@ -82,7 +82,7 @@ class Xrpminer:
       validate = session.get("https://faucetearner.org/withdraw.php", proxies=self.proxy())
       validate = BeautifulSoup(validate.content, 'html.parser')
       amount = validate.find("input", {"id": "withdraw_amount"})["value"]
-      if int(amount.replace('.', '')) > 10000:
+      if int(amount.replace('.', '')) > 0.01:
         validate = validate.find_all("script")[-1].text.strip().split('formData.validate="')[1].split('"')[0]
         data = {
           "amount": amount,
