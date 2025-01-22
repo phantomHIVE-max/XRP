@@ -21,7 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests  # Installs the requests library
         pip install rich
-        pip install fake_useragent
+        pip install real_useragent
         pip install bs4
 
     - name: Run Python script in a loop
